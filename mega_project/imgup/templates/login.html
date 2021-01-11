@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper red darken-1">
+            <a href="http://www.griet.ac.in/" class="brand-logo"><img height="60" width="300" src="{% static 'images/GRIET_Logo.png' %}  " /></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="#">Home</a></li>
+                <li><a href="../homepage">Logout</a></li>
+                <li><a href="http://www.griet.ac.in/">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="row blue lighten-4">
+
+        <div class="col s10 m3 blue-grey darken-1">
+
+            <!-- Grey navigation panel -->
+            <!-- Card -->
+
+            <div class="row">
+                <div class="col">
+                    <div class="card blue-grey darken-1">
+                        <div class="card-content white-text">
+                            <span class="card-title">PNEUMONIA CLASSIFICATION</span>
+                            <p>
+                                Enter your name and email.<br />
+                                Results will be displayed here and will be mailed to the respective Email-Id.
+                            </p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">WELCOME {{uname}}!!! </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br /><br /><br />
+            <br /><br />
+            <br /><br /><br />
+            <br /><br /><br />
+            <br /><br />
+            <br /><br /><br />
+            <br /><br /><br />
+            <br /><br />
+            <br /><br /><br />
+
+        </div>
+        <div class="col s9 m2 ">
+
+        </div>
+        <div class="col s9 m3 ">
+            <br /><strong style="color:dimgrey">Enter the data:</strong><br />
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <p style="color:dimgrey">Choose the image needed to be classified:</p>
+                <input type="file" name="document" /><br /><br />
+                <button class="btn waves-effect waves-light" type="submit" name="action">
+                    Submit
+                    <i class="material-icons right"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
